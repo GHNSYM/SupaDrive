@@ -2,6 +2,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
+// import SearchPage from "./pages/SearchPage";
+// import SettingsPage from "./pages/SettingsPage";
+// import StatsPage from "./pages/StatsPage";
+// import FilesPage from "./pages/FilesPage";
 
 function App() {
   return (
@@ -21,7 +25,10 @@ function App() {
             </>
           }
         />
-
+        {/* <Route path="/search" element={<SearchPage />} />
+        <Route path="/files" element={<FilesPage />} />
+        <Route path="/stats" element={<StatsPage />} />
+        <Route path="/settings" element={<SettingsPage />} /> */}
         {/* Home Page for Signed In Users */}
         <Route
           path="/home"

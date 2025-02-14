@@ -1,7 +1,9 @@
-import { SignedIn, UserButton } from "@clerk/clerk-react";
 import { motion } from "framer-motion";
+import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
 
 export default function LoggedHeader() {
+  const { user } = useUser();
+
   return (
     <header className="fixed top-0 left-0 w-full bg-gray-950 py-4 flex justify-between items-center px-6 font-mono border-b border-gray-800 text-white z-50">
       {/* Animated Logo */}
@@ -19,8 +21,21 @@ export default function LoggedHeader() {
 
       {/* User Profile Button */}
       <SignedIn>
-        <div className="border text-white rounded-xl">
-          <UserButton afterSignOutUrl="/" />
+      <div className="flex items-center space-x-4">
+          {/* User Name */}
+          <span className="text-white text-lg font-medium">{user?.fullName}</span>
+
+          {/* Profile Picture */}
+          <div className="relative">
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  avatarBox: "w-12 h-12 border-2 border-white rounded-full",
+                },
+              }}
+            />
+          </div>
         </div>
       </SignedIn>
     </header>

@@ -51,11 +51,11 @@ export default function LandingPage() {
       <div className="mt-12 relative z-10">
         <SignInButton mode="modal" redirectUrl="/home">
           <motion.button
-            className="px-5 font-mono py-2 bg-gray-950 hover:bg-gray-900 border text-white font-semibold rounded-lg transition-all
+            className="px-5 font-mono py-2 bg-gray-950 hover:bg-gray-900 border text-white cursor-pointer font-semibold rounded-lg transition-all
             before:absolute before:-inset-1 before:bg-blue-500/40 before:blur-lg before:rounded-lg before:opacity-50
             hover:before:opacity-80 hover:before:scale-110 relative"
             whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.95 }}
             >
             Get Started
           </motion.button>
