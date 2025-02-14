@@ -42,7 +42,7 @@ router.post('/login',
         }
         // jwt
         const token=jwt.sign({
-            useId:user._id,
+            userId:user._id,
             email:user.email,
             username: user.username
         },
